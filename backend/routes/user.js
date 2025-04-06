@@ -98,5 +98,24 @@ const updateBody = zod.object({
     lastName: zod.string().optional(),
 })
 
+router.put("/", authMiddleware, async (req, res) => {
+    const { success } = updateBody.safeParse(req.body)
+    if (!success) {
+        res.status(411).json({
+            message: "Error while updating information"
+        })
+    }
+
+    await User.updateOne(
+        { _id: req.userId }, // ✅ filter condition: which user to update
+        { $set: req.body }   // ✅ update the fields from request body
+    )
+    
+
+    res.json({
+        message: "Updated successfully"
+    })
+})
+
 
 module.exports = router;
