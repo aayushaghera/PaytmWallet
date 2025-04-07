@@ -51,7 +51,7 @@ export const Dashboard = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const balanceResponse = await axios.get("http://localhost:3000/api/v1/account/balance", {
+                const balanceResponse = await axios.get("https://paytmwallet-6aeq.onrender.com/api/v1/account/balance", {
                     headers: {
                         Authorization: "Bearer " + localStorage.getItem("token"),
                     },

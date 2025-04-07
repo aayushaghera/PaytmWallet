@@ -113,7 +113,7 @@ export const SendMoney = () => {
         setError("");
 
         try {
-            await axios.post("http://localhost:3000/api/v1/account/transfer", {
+            await axios.post("https://paytmwallet-6aeq.onrender.com/api/v1/account/transfer", {
                 to: id,
                 amount: Number(amount)
             }, {

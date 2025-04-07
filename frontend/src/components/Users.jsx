@@ -72,7 +72,7 @@ export const Users = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get(`http://localhost:3000/api/v1/user/bulk${filter ? `?filter=${filter}` : ""}`)
+        axios.get(`https://paytmwallet-6aeq.onrender.com/api/v1/user/bulk${filter ? `?filter=${filter}` : ""}`)
             .then(response => {
                 setUsers(response.data.user);
                 setLoading(false);

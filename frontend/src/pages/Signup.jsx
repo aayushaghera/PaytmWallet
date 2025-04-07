@@ -83,7 +83,7 @@ export const Signup = () => {
         setError("");
 
         try {
-            const response = await axios.post("http://localhost:3000/api/v1/user/signup", {
+            const response = await axios.post("https://paytmwallet-6aeq.onrender.com/api/v1/user/signup", {
                 username,
                 firstName,
                 lastName,
